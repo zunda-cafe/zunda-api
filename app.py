@@ -4,13 +4,13 @@ from flask import Flask
 from view import gnavi_api
 from view import test
 
-application = Flask(__name__)
-application.config['JSON_AS_ASCII'] = False
+app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 
 modules_define = [gnavi_api.app, test.app, ]
-for app in modules_define:
-    application.register_blueprint(app)
+for ap in modules_define:
+    app.register_blueprint(ap)
 
 if __name__ == "__main__":
-    application.debug = True
-    application.run()
+    app.debug = True
+    app.run()
