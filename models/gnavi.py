@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import urllib
 import requests
-
+import os
 
 class Gnavi(object):
 
@@ -47,7 +47,7 @@ class Gnavi(object):
 
     def __request(self, url, params):
 
-        keyid = "c30154caa70f058b30f5349f28030382"
+        keyid = os.environ.get('GNAVI_KEY_ID', None)
         url_base = "https://api.gnavi.co.jp/"
 
         query = [
@@ -63,4 +63,3 @@ class Gnavi(object):
             print("APIアクセスに失敗しました。")
         json = data.json()
         return json
-

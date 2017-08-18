@@ -6,7 +6,7 @@ from flask import Response
 from flask import request
 from models.gnavi import Gnavi
 
-app = Blueprint("api", __name__, url_prefix="/api/gnavi")
+app = Blueprint("api_gnavi", __name__, url_prefix="/api/gnavi")
 
 @app.route("/category_small_search")
 def gnavi_category_small_search():
@@ -69,4 +69,3 @@ def __get_response(data):
                     status=200,
                     mimetype="application/json; charset=utf-8")
     return resp
-
